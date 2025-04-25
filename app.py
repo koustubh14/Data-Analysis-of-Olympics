@@ -17,7 +17,7 @@ st.sidebar.image(
     'https://e7.pngegg.com/pngimages/1020/402/png-clipart-2024-summer-olympics-brand-circle-area-olympic-rings-olympics-logo-text-sport.png')
 user_menu = st.sidebar.radio(
     'Select an Option',
-    ('Medal Tally', 'Country-wise Analysis', 'Athlete wise Analysis', , 'Overall Analysis')
+    ('Medal Tally', 'Country-wise Analysis', 'Athlete wise Analysis' , 'Overall Analysis')
 )
 
 if user_menu == 'Medal Tally':
@@ -141,7 +141,7 @@ if user_menu == 'Athlete wise Analysis':
             valid_data.append(data)
             labels.append(label)
 
-        if valid_data:
+    if valid_data:
         fig = ff.create_distplot([x1, x2, x3, x4],
                                  ['Overall Age', 'Gold Medalist', 'Silver Medalist', 'Bronze Medalist'],
                                  show_hist=False, show_rug=False)
@@ -176,7 +176,7 @@ if user_menu == 'Athlete wise Analysis':
             x.append(gold_ages)
             name.append(sport)
 
-        if x:
+    if x:
         fig = ff.create_distplot(x, name, show_hist=False, show_rug=False)
         fig.update_layout(
             xaxis_title="Age",
