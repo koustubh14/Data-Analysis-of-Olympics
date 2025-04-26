@@ -92,15 +92,6 @@ if user_menu == 'Overall Analysis':
         annot=True)
     st.pyplot(fig)
 
-    st.title("Most successful Athletes")
-    sport_list = df['Sport'].unique().tolist()
-    sport_list.sort()
-    sport_list.insert(0, 'Overall')
-
-    selected_sport = st.selectbox('Select a Sport', sport_list)
-    x = helper.most_successful(df, selected_sport)
-    st.table(x)
-
 if user_menu == 'Country-wise Analysis':
     st.sidebar.title('Country-wise Analysis')
 
@@ -119,10 +110,6 @@ if user_menu == 'Country-wise Analysis':
     fig, ax = plt.subplots(figsize=(20, 20))
     ax = sns.heatmap(pt, annot=True)
     st.pyplot(fig)
-
-    st.title("Top 10 athletes of " + selected_country)
-    top10_df = helper.most_successful_countrywise(df, selected_country)
-    st.table(top10_df)
 
 if user_menu == 'Athlete wise Analysis':
     athlete_df = df.drop_duplicates(subset=['Name', 'region'])
