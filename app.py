@@ -17,7 +17,7 @@ st.sidebar.image(
     'https://e7.pngegg.com/pngimages/1020/402/png-clipart-2024-summer-olympics-brand-circle-area-olympic-rings-olympics-logo-text-sport.png')
 user_menu = st.sidebar.radio(
     'Select an Option',
-    ('Medal Tally', 'Country-wise Analysis', 'Athlete wise Analysis' , 'Overall Analysis')
+    ('Medal Tally', 'Country-wise Analysis', 'Athlete wise Analysis', 'Overall Analysis')
 )
 
 if user_menu == 'Medal Tally':
